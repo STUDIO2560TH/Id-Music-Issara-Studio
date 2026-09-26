@@ -1,0 +1,141 @@
+#rgi-panel {
+  --rgi-bg: #ffffff;
+  --rgi-fg: #1a1a1a;
+  --rgi-muted: #6b6f75;
+  --rgi-border: #d9dadc;
+  --rgi-btn: #f2f4f5;
+  --rgi-accent: #335fff;
+  box-sizing: border-box;
+  margin: 16px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--rgi-border);
+  border-radius: 10px;
+  background: var(--rgi-bg);
+  color: var(--rgi-fg);
+  font: 14px/1.4 "Builder Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Roblox dark theme puts .dark-theme on <body> */
+.dark-theme #rgi-panel,
+#rgi-panel.rgi-dark {
+  --rgi-bg: #232527;
+  --rgi-fg: #f7f7f8;
+  --rgi-muted: #a8abaf;
+  --rgi-border: #393b3d;
+  --rgi-btn: #393b3d;
+}
+
+#rgi-panel.rgi-floating {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 99999;
+  width: min(560px, calc(100vw - 32px));
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+#rgi-panel .rgi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#rgi-panel .rgi-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#rgi-panel .rgi-close {
+  border: 0;
+  background: transparent;
+  color: var(--rgi-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#rgi-panel .rgi-body {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#rgi-panel .rgi-icon-wrap {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 256px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--rgi-btn);
+}
+
+#rgi-panel .rgi-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#rgi-panel .rgi-side {
+  flex: 1 1 220px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#rgi-panel .rgi-info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  margin: 0;
+}
+
+#rgi-panel .rgi-info dt {
+  color: var(--rgi-muted);
+  margin: 0;
+}
+
+#rgi-panel .rgi-info dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+#rgi-panel .rgi-info a {
+  color: var(--rgi-accent);
+}
+
+#rgi-panel .rgi-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#rgi-panel .rgi-btn,
+#rgi-panel .rgi-select {
+  padding: 5px 10px;
+  border: 1px solid var(--rgi-border);
+  border-radius: 6px;
+  background: var(--rgi-btn);
+  color: var(--rgi-fg);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#rgi-panel .rgi-btn:hover {
+  border-color: var(--rgi-accent);
+}
+
+#rgi-panel .rgi-status {
+  color: var(--rgi-muted);
+  font-size: 12px;
+}
+
+#rgi-panel .rgi-status:empty {
+  display: none;
+}

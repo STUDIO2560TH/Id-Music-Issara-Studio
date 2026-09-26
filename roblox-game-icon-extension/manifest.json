@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Roblox Game Icon Viewer",
+  "version": "1.0.0",
+  "description": "Shows the square (1:1) game icon and extra info on every Roblox game page.",
+  "permissions": ["downloads"],
+  "host_permissions": [
+    "https://apis.roblox.com/*",
+    "https://games.roblox.com/*",
+    "https://thumbnails.roblox.com/*",
+    "https://*.rbxcdn.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.roblox.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
