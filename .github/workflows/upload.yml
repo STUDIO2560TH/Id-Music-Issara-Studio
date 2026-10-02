@@ -28,6 +28,11 @@ jobs:
           ROBLOX_GROUP_ID: ${{ secrets.ROBLOX_GROUP_ID }}
         run: python upload_audio.py
 
+      - name: Announce New Songs to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python announce_new_songs.py HEAD || true
+
       - name: Show Recent Uploads
         run: |
           if [ -f sounds/keep ]; then
